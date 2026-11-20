@@ -455,7 +455,7 @@ with tab_map:
     ctr_lat = float(map_df["LAT"].mean())
     ctr_lon = float(map_df["LON"].mean())
     m = folium.Map(location=[ctr_lat, ctr_lon], zoom_start=4,
-                   tiles="CartoDB positron")
+               tiles="OpenStreetMap")
 
     dep_min = float(map_df["TOTAL_DEPOSITS"].min())
     dep_max = float(map_df["TOTAL_DEPOSITS"].max())
@@ -567,8 +567,8 @@ with tab_results:
 
     sim_states = st.session_state.get("sim_states", [])
     res_map = folium.Map(
-        location=[float(sel_df["LAT"].mean()), float(sel_df["LON"].mean())],
-        zoom_start=5, tiles="CartoDB positron",
+    location=[float(sel_df["LAT"].mean()), float(sel_df["LON"].mean())],
+    zoom_start=5, tiles="OpenStreetMap",
     )
 
     # Candidate cloud
